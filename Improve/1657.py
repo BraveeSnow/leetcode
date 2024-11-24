@@ -49,12 +49,12 @@ Constraints:
     word1 and word2 contain only lowercase English letters.
 
 Runtime
-147ms
-Beats44.00%
+138ms
+Beats48.75%
 
 Memory
-17.42MB
-Beats45.80%
+17.21MB
+Beats65.35%
 """
 
 from collections import defaultdict
@@ -62,6 +62,9 @@ from collections import defaultdict
 
 class Solution:
     def closeStrings(self, word1: str, word2: str) -> bool:
+        if len(word1) != len(word2):
+            return False
+
         map1 = defaultdict(lambda: 0)
         map2 = defaultdict(lambda: 0)
 
