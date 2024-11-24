@@ -34,12 +34,12 @@ Constraints:
     s consist of printable ASCII characters.
 
 Runtime
-22ms
-Beats26.58%
+15ms
+Beats48.98%
 
 Memory
-19.18MB
-Beats8.39%
+17.65MB
+Beats41.86%
 """
 
 
@@ -48,20 +48,21 @@ class Solution:
 
     def reverseVowels(self, s: str) -> str:
         s = list(s)
-        indices = [i for i in range(len(s)) if s[i].lower() in Solution.VOWELS]
+        left = 0
+        right = len(s) - 1
 
-        if len(indices) % 2 == 1:
-            indices.pop(len(indices) // 2)
+        while left <= right:
+            while s[left].lower() not in Solution.VOWELS and left <= right:
+                left += 1
 
-        if len(indices) == 0:
-            return "".join(s)
+            while s[right].lower() not in Solution.VOWELS and left <= right:
+                right -= 1
 
-        for i, j in zip(
-            indices[: len(indices) // 2],
-            indices[len(indices) - 1 : len(indices) // 2 - 1 : -1],
-        ):
-            print(i, j)
-            s[i], s[j] = s[j], s[i]
+            if left <= right:
+                s[left], s[right] = s[right], s[left]
+
+            left += 1
+            right -= 1
 
         return "".join(s)
 

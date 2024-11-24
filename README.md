@@ -8,7 +8,7 @@ This table highlights what I've been able to achieve in rankings.
 
 | Problem                 | Runtime %   | Memory % |
 |-------------------------|-------------|----------|
-| [345](Improve/345.py)   | 26.58%      | 8.39%    |
+| [345](Improve/345.py)   | 48.98%      | 41.86%   |
 | [724](Solved/724.py)    | 58.83%      | 68.03%   |
 | [1207](Solved/1207.py)  | **100.00%** | 76.22%   |
 | [1657](Improve/1657.py) | 48.75%      | 65.35%   |
